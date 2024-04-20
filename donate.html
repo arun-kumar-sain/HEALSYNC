@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate to Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .widget {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label, input, textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 100px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: cyan;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: cyan;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Donate to Us</h1>
+  <p>Your contribution can make a significant impact on our mission to revolutionize rare disease healthcare.</p>
+  
+  <div class="widget">
+    <h2>Donate Money</h2>
+    <form action="./donated.html"  onsubmit="fun()">
+      <label for="money-amount">Amount:</label>
+      <input type="text" id="money-amount" name="money-amount" placeholder="Enter donation amount" required>
+      <label for="money-email">Email:</label>
+      <input type="email" id="money-email" name="money-email" placeholder="Enter your email" required>
+      <label for="money-phone">Phone Number:</label>
+      <input type="tel" id="money-phone" name="money-phone" placeholder="Enter your phone number" required>
+      <button type="submit">Donate Now </button>
+      </form>
+      
+    </form>
+  </div>
+
+  <div class="widget" >
+    <h2>Donate Healthcare Resources</h2>
+    <form action="./donated.html" onsubmit="fun()">
+      <label for="resource-description">Description:</label>
+      <textarea id="resource-description" name="resource-description" placeholder="Enter description of the healthcare resources you'd like to donate" required></textarea>
+      <label for="resource-email">Email:</label>
+      <input type="email" id="resource-email" name="resource-email" placeholder="Enter your email" required>
+      <label for="resource-phone">Phone Number:</label>
+      <input type="tel" id="resource-phone" name="resource-phone" placeholder="Enter your phone number" required>
+      <button type="submit" id="2">Donate Now</button>
+    </form>
+  </div>
+</div>
+<script>
+function fun(){
+  console.log('arun');
+  window.location.href = "./donated.html";
+}
+</script>
+</body>
+</html>

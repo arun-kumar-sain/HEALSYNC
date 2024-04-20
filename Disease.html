@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- <style>
+        #wilson{
+            opacity: 0;
+        }
+    </style> -->
+    <style>
+        #card{
+    padding-top: 130px;
+}
+*{
+    background-color: lightcyan;
+}
+.but1{
+    padding-bottom: 10px;
+    opacity: 0;
+}
+.but2{
+    opacity: 0;
+}
+/* #cards{
+    opacity: 0;
+} */
+.card{
+    border:lightcyan;
+  }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HealSync</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <center>
+        <form class="d-flex" role="search" onsubmit="displaySearchText(event)">
+            <input class="form-control me-2" type="search" placeholder="Search for diseases" aria-label="Search" id="searchbutton">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </center>
+      <div class="cards" id="cards">
+        <!-- <img src="cr7.png" alt="" id="cr7"> -->
+        <center id="card">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" id="card-title"></h5>
+                  <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6> -->
+                  <p class="card-text" id="space">This card is empty (it might be because the disease data is not available)</p>
+                  <div class="but1" id="but1">
+                    <a href="..." class="btn btn-primary card-link" onclick="doctorPage()" id="but1link">
+                        <button class="btn btn-primary card-link">Talk to Doctors</button>
+                    </a>
+                    
+                    
+               
+                  </div>
+                  <div class="but2"  id="but2">
+                    <a href="..." class="btn btn-primary card-link" onclick="patientPage()" id="but2link">
+                        <button class="btn btn-primary card-link">Talk to Recovered Patients</button>
+                    </a>
+                  </div>
+    
+                </div>
+              </div>
+          </center>
+      </div>
+      <!-- <p id="wilson">
+        Wilson's disease is a rare genetic disorder characterized by the abnormal accumulation of copper in various organs, predominantly the liver and brain. This condition arises from mutations in the ATP7B gene, which disrupts the body's ability to regulate copper levels effectively. As a result, copper builds up over time, leading to potentially severe complications.
+    </p>
+    <center>
+        <p id="Aicardi">
+            Aicardi syndrome is a rare genetic disorder primarily affecting females. It is characterized by the absence or underdevelopment of the corpus callosum, which is the structure that connects the two hemispheres of the brain, along with other neurological and physical abnormalities.
+        </p>
+    </center> -->
+      <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        var aicar="Aicardi syndrome is a rare genetic disorder primarily affecting females. It is characterized by the absence or underdevelopment of the corpus callosum, which is the structure that connects the two hemispheres of the brain, along with other neurological and physical abnormalities.";
+var wil='Wilsons disease is a rare genetic disorder characterized by the abnormal accumulation of copper in various organs, predominantly the liver and brain. This condition arises from mutations in the ATP7B gene, which disrupts the bodys ability to regulate copper levels effectively. As a result, copper builds up over time, leading to potentially severe complications';
+var hepa="Hepatitis C is a viral infection caused by the hepatitis C virus (HCV) that primarily affects the liver. It is a major public health concern worldwide. Hepatitis C is transmitted through contact with the blood of an infected person. This can occur through sharing needles or other equipment used for injecting drugs, receiving blood transfusions or organ transplants from infected donors.";
+var cyst="Cystic fibrosis (CF) is a genetic disorder that affects the lungs, digestive system, and other organs. It is caused by mutations in the cystic fibrosis transmembrane conductance regulator (CFTR) gene, which leads to the production of a defective CFTR protein. This protein is involved in controlling the flow of salt and fluids in and out of cells, particularly in the lungs and digestive tract.";
+var hod="Hodgkin lymphoma, named after Dr. Thomas Hodgkin who first described it in 1832, is a cancer of the lymphatic system characterized by the presence of Reed-Sternberg cells, large abnormal cells that are derived from B lymphocytes, a type of white blood cell. This cancer originates in lymph nodes and can spread to nearby lymph nodes as well as other organs in the body.";
+var gau="Gaucher disease is a rare genetic disorder characterized by the deficiency of an enzyme called glucocerebrosidase. This enzyme is responsible for breaking down a fatty substance called glucocerebroside, which accumulates in various organs and tissues throughout the body, particularly the liver, spleen, and bone marrow.";
+var acro="Acromegaly is a rare hormonal disorder characterized by the excessive production of growth hormone (GH) and insulin-like growth factor 1 (IGF-1) in adults. This overproduction is typically caused by a noncancerous tumor of the pituitary gland, known as a pituitary adenoma, although in rare cases, it can also result from tumors elsewhere in the body that produce GH-releasing hormone (GHRH).";
+function displaySearchText(event){
+  event.preventDefault(); // Prevent form submission
+  
+  // Get the search input element
+//   var but1=document.getElementById('but1');
+//   but1.style.opacity=1;
+//   var but2=document.getElementById('but2');
+//   but2.style.opacity=1;
+//   var cr7 = document.getElementById('cr7');
+//   console.log('heelo',cr7);
+// // Check if the element exists
+// cr7.removeAttribute('src'); // Set the src attribute to the new image URL
+
+
+
+  // var card=document.getElementById('card');
+  // but2.style.border="black";
+  
+  var myDiv = document.getElementById('cards');
+  var currentOpacity = parseFloat(myDiv.style.opacity);
+  console.log(currentOpacity);
+  currentOpacity=1; 
+  var searchInput = document.getElementById('searchbutton');
+  
+  // Get the value entered in the search input field
+  var searchText = searchInput.value.trim();
+  switch(searchText){
+    case "Wilsons Disease":
+  var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Wilson's Disease";
+        spacele.textContent=wil;
+        break;
+    case "Aicardi Syndrome":
+    var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+        console.log('Aicardi Syndrome');
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Aicardi Syndrome";
+        spacele.textContent=aicar;
+        break;
+    case "Hepatitis C":
+    var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+      console.log('Hepatitis C');
+      var spacele=document.getElementById('space');
+      var title=document.getElementById('card-title');
+        title.textContent="Hepatitis C";
+      spacele.textContent=hepa;
+      break;
+      case "Cystic fibrosis":
+      var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+        console.log('Cystic fibrosis');
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Cystic fibrosis";
+        spacele.textContent=cyst;
+        break;
+        case "Hodgkin lymphoma":
+        console.log('Hodgkin lymphoma');
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Hodgkin lymphoma";
+        spacele.textContent=cyst;
+        break;
+        case "Gaucher disease":
+        var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+        console.log('Gaucher disease');
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Gaucher disease";
+        spacele.textContent=cyst;
+        break;
+        case "Acromegaly":
+        var but1=document.getElementById('but1');
+  but1.style.opacity=1;
+  var but2=document.getElementById('but2');
+  but2.style.opacity=1;
+        console.log('Acromegaly');
+        var spacele=document.getElementById('space');
+        var title=document.getElementById('card-title');
+        title.textContent="Acromegaly";
+        spacele.textContent=acro;
+        break;
+    default:
+        document.getElementById('space').textContent="This card is empty (it might be because the disease data is not available)";
+        var but1=document.getElementById('but1');
+        but1.style.opacity=0;
+        var but2=document.getElementById('but2');
+        but2.style.opacity=0;
+        var title=document.getElementById('card-title');
+        title.textContent=searchInput.value;
+        break;
+  }
+  
+  // Display the search text
+  // alert("You searched for: " + searchText);
+}
+function doctorPage(){
+    var doctor=document.getElementById('searchbutton').value;
+    switch(doctor){
+        case "Wilsons Disease":
+        var link = document.getElementById('but1link');
+        link.href = "./Sophia.html";
+        break;
+        case "Aicardi Syndrome":
+        var link = document.getElementById('but1link');
+        link.href = "./Scott.html";
+        break;
+        case "Gaucher disease":
+        var link = document.getElementById('but1link');
+        link.href = "./Paul.html";
+        break;
+        case "Hodgkin lymphoma":
+        var link = document.getElementById('but1link');
+        link.href = "./Wilson.html";
+        break;
+        case "Cystic fibrosis":
+        var link = document.getElementById('but1link');
+        link.href = "./Tate.html";
+        break;
+        case "Hepatitis C":
+        var link = document.getElementById('but1link');
+        link.href = "./John.html";
+        break;
+        case "Acromegaly":
+        var link = document.getElementById('but1link');
+        link.href = "./Austin.html";
+        break;
+        default:
+        break;
+        var link = document.getElementById('but1link');
+        link.href = "...";
+    }
+
+}
+function patientPage(){
+    var pat=document.getElementById('searchbutton').value;
+    switch(pat){
+        case "Wilsons Disease":
+        var link = document.getElementById('but2link');
+        link.href = "./wilson.html";
+        break;
+        case "Aicardi Syndrome":
+        var link = document.getElementById('but2link');
+        link.href = "./Aicardi.html";
+        break;
+        case "Gaucher disease":
+        var link = document.getElementById('but2link');
+        link.href = "./gaucher.html";
+        break;
+        case "Hodgkin lymphoma":
+        var link = document.getElementById('but2link');
+        link.href = "./hodgokin.html";
+        break;
+        case "Cystic fibrosis":
+        var link = document.getElementById('but2link');
+        link.href = "./cysstic.html";
+        break;
+        case "Hepatitis C":
+        var link = document.getElementById('but2link');
+        link.href = "./hepatitis.html";
+        break;
+        case "Acromegaly":
+        var link = document.getElementById('but2link');
+        link.href = "./Acromegaly.html";
+        break;
+        default:
+        break;
+        var link = document.getElementById('but2link');
+        link.href = "...";
+    }
+
+}
+// function toggleOpacity() {
+//   var myDiv = document.getElementById('wilson');
+//   // Get the current opacity of the div
+//   var currentOpacity = parseFloat(myDiv.style.opacity);
+
+//   // Toggle the opacity between 0 and 1
+//   if (currentOpacity === 0) {
+//       myDiv.style.opacity = 1;
+//   }
+//    else {
+//       myDiv.style.opacity = 0;
+//   }
+// }
+// function toggleOpacity1() {
+//   var myDiv = document.getElementById('Aicardi');
+//   // Get the current opacity of the div
+//   var currentOpacity = parseFloat(myDiv.style.opacity);
+
+//   // Toggle the opacity between 0 and 1
+//   if (currentOpacity === 0) {
+//       myDiv.style.opacity = 1;
+//   }
+//    else {
+//       myDiv.style.opacity = 0;
+//   }
+// }
+    </script>
+  </body>
+</html>
